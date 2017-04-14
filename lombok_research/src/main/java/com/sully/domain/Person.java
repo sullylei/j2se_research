@@ -1,6 +1,5 @@
 package com.sully.domain;
 
-import lombok.Data;
 import org.apache.log4j.Logger;
 
 
