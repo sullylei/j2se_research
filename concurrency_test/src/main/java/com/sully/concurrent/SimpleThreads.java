@@ -60,7 +60,7 @@ public class SimpleThreads {
                 System.exit(1);
             }
         }
-
+        System.out.println("打印patience的值为:"+patience);
         threadMessage("Starting MessageLoop thread");
         long startTime = System.currentTimeMillis();
         Thread t = new Thread(new MessageLoop());
