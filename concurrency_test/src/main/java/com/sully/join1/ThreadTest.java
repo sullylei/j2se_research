@@ -3,7 +3,7 @@ package com.sully.join1;
 /**
  * Creator: lei.s
  * Create Date: 2017年04月20日
- * 类功能描述：
+ * 类功能描述：http://uule.iteye.com/blog/1101994
  */
 class ThreadTest extends Thread {
 
