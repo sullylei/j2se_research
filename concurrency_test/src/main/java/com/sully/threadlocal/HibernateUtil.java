@@ -27,7 +27,7 @@ public class HibernateUtil {
     }
 
     //创建线程局部变量session，用来保存Hibernate的Session
-    public static final ThreadLocal session = new ThreadLocal();
+    public static final ThreadLocal<Session> session = new ThreadLocal<Session>();
 
     /**
      * 获取当前线程中的Session
@@ -35,7 +35,7 @@ public class HibernateUtil {
      * @throws HibernateException
      */
     public static Session currentSession() throws HibernateException {
-        Session s = (Session) session.get();
+        Session s =  session.get();
         // 如果Session还没有打开，则新开一个Session
         if (s == null) {
             s = sessionFactory.openSession();
@@ -46,7 +46,7 @@ public class HibernateUtil {
 
     public static void closeSession() throws HibernateException {
         //获取线程局部变量，并强制转换为Session类型
-        Session s = (Session) session.get();
+        Session s = session.get();
         session.set(null);
         if (s != null)
             s.close();
