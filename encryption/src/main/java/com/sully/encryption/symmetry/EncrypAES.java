@@ -1,16 +1,22 @@
 package com.sully.encryption.symmetry;
-
-import javax.crypto.*;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
 /**
  * Creator: lei.s
  * Create Date: 2017年06月02日
- * 类功能描述：对称加密 DES方式
+ * 类功能描述：对称加密 AES方式
  */
-public class EncrypDES {
+
+
+public class EncrypAES {
 
     //KeyGenerator 提供对称密钥生成器的功能，支持各种算法
     private KeyGenerator keygen;
@@ -21,14 +27,14 @@ public class EncrypDES {
     //该字节数组负责保存加密的结果
     private byte[] cipherByte;
 
-    public EncrypDES() throws NoSuchAlgorithmException, NoSuchPaddingException {
+    public EncrypAES() throws NoSuchAlgorithmException, NoSuchPaddingException{
         Security.addProvider(new com.sun.crypto.provider.SunJCE());
         //实例化支持DES算法的密钥生成器(算法名称命名需按规定，否则抛出异常)
-        keygen = KeyGenerator.getInstance("DES");
+        keygen = KeyGenerator.getInstance("AES");
         //生成密钥
         deskey = keygen.generateKey();
         //生成Cipher对象,指定其支持的DES算法
-        c = Cipher.getInstance("DES");
+        c = Cipher.getInstance("AES");
     }
 
     /**
@@ -76,8 +82,8 @@ public class EncrypDES {
      * @throws InvalidKeyException
      */
     public static void main(String[] args) throws Exception {
-        EncrypDES de1 = new EncrypDES();
-        String msg ="郭德刚-搞笑相声全集";
+        EncrypAES de1 = new EncrypAES();
+        String msg ="郭XX-搞笑相声全集";
         byte[] encontent = de1.Encrytor(msg);
         byte[] decontent = de1.Decryptor(encontent);
         System.out.println("明文是:" + msg);
