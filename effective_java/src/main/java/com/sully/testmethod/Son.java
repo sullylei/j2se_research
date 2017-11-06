@@ -20,5 +20,8 @@ public class Son extends Parent {
     }
     public static void main(String[] args) {
         new Son();
+
+        int x= 10;
+        System.out.println(x+=x-=x);
     }
 }
