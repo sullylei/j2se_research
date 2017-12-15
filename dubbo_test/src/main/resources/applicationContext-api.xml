@@ -15,6 +15,8 @@
     
 
     <dubbo:reference id="returnDebtDubboService" interface="com.belle.finance.biz.dubbo.IReturnDebtDubboService" version="1.1" protocol="dubbo" timeout="3000" check="false" />
-    
+
+	<!-- 订单接口(订单) -->
+	<dubbo:reference id="orderApiService" interface="com.yougou.ordercenter.api.order.IOrderApi" protocol="dubbo"  timeout="120000" check="false" version="1.4"/>
 
 </beans>
