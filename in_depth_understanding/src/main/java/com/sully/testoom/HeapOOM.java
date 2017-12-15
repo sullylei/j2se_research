@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Creator: lei.s
  * Create Date: 2017年11月07日
- * 类功能描述：
+ * 类功能描述：深入理解jvm虚拟机小例子
  */
 public class HeapOOM {
     public static void main(String[] args) {
