@@ -16,7 +16,6 @@ public class Test {
         Person person2 = new Person("001", "wity_lv", "wity_lv@sample.com");
         System.out.println(person.equals(person2));
 
-
         int size = 2;
         int key1=3,key2=5,key3=7;
         System.out.println(key1%size);
