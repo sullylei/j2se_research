@@ -26,4 +26,6 @@
   
 8.in_depth_understanding
 	《深入理解jvm虚拟机》小例子 
-  
+	
+9.jedis_research
+	java测试redis
