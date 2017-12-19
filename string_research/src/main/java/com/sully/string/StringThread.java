@@ -1,5 +1,7 @@
 package com.sully.string;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Creator: lei.s
  * Create Date: 2017年04月14日
@@ -22,7 +24,7 @@ public class StringThread implements Runnable {
             System.out.println("[" + Thread.currentThread().getName() + "]开始运行了");
             // 休眠5秒模拟脚本调用
             try {
-                Thread.sleep(5000);
+                TimeUnit.SECONDS.sleep(5);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
