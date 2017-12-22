@@ -14,6 +14,7 @@
   
 4.concurrency_test
 	并发小例子
+	3.1 Object类的wait和notify方法小例子--ProducerConsumerInJava.java
   
 5.dubbo_test
 	dubbo消费者小例子
