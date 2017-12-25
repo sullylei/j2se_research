@@ -18,5 +18,4 @@
 
 	<!-- 订单接口(订单) -->
 	<dubbo:reference id="orderApiService" interface="com.yougou.ordercenter.api.order.IOrderApi" protocol="dubbo"  timeout="120000" check="false" version="1.4"/>
-
 </beans>
