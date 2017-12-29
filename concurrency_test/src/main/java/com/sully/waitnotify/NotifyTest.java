@@ -3,7 +3,6 @@ package com.sully.waitnotify;
 /**
  * Creator: lei.s
  * Create Date: 2017年12月25日-10:37
- *
  * @Description:
  */
 public class NotifyTest {
@@ -19,7 +18,6 @@ public class NotifyTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             flag = "false";
             flag.notify();
         }
