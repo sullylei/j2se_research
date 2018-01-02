@@ -23,6 +23,7 @@ public class TestDynamicProxy {
                         userService.getClass().getInterfaces(),
                         transactionInterceptor);
         userServiceProxy.addUser();
+        System.out.println("11");
     }
 
 }
