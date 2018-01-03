@@ -35,3 +35,5 @@
 	Lombok是一个可以通过简单的注解形式来帮助我们简化消除一些必须有但显得很臃肿的Java代码的工具，通过使用对应的注解，可以在编译源码的时候生成对应的方法。
 11.string_research
 	String小例子
+12.dynamic-proxy
+	jdk动态代理小例子
