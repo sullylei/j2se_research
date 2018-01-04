@@ -1,5 +1,8 @@
-package com.sully.dynamicproxy;
+package com.sully.dynamicproxy.jdk;
 
+import com.sully.dynamicproxy.UserService;
+import com.sully.dynamicproxy.UserServiceImpl;
+import com.sully.dynamicproxy.jdk.TransactionInterceptor;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
@@ -23,7 +26,6 @@ public class TestDynamicProxy {
                         userService.getClass().getInterfaces(),
                         transactionInterceptor);
         userServiceProxy.addUser();
-        System.out.println("11");
     }
 
 }
