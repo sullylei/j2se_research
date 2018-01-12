@@ -1,8 +1,9 @@
 package com.sully.dynamicproxy.jdk;
 
+import com.sully.dynamicproxy.HelloService;
+import com.sully.dynamicproxy.HelloServiceImpl;
 import com.sully.dynamicproxy.UserService;
 import com.sully.dynamicproxy.UserServiceImpl;
-import com.sully.dynamicproxy.jdk.TransactionInterceptor;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
@@ -28,4 +29,13 @@ public class TestDynamicProxy {
         userServiceProxy.addUser();
     }
 
+    @Test
+    public  void testHelloServiceProxy(){
+        HelloServiceHandler handler = new HelloServiceHandler();
+        HelloService service = new HelloServiceImpl();
+        //绑定代理对象。
+        HelloService proxy = (HelloService) handler.bind(service, new Class[] {service.getClass()});
+        proxy.sayHello("hello");
+
+    }
 }
