@@ -4,6 +4,9 @@ import com.sully.dynamicproxy.HelloService;
 import com.sully.dynamicproxy.HelloServiceImpl;
 import com.sully.dynamicproxy.UserService;
 import com.sully.dynamicproxy.UserServiceImpl;
+import com.sully.dynamicproxy.jdk1.ProxyHandler;
+import com.sully.dynamicproxy.jdk1.RealSubject;
+import com.sully.dynamicproxy.jdk1.Subject;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
@@ -37,5 +40,12 @@ public class TestDynamicProxy {
         HelloService proxy = (HelloService) handler.bind(service, new Class[] {service.getClass()});
         proxy.sayHello("hello");
 
+    }
+
+    @Test
+    public void testSubjectProxy(){
+        ProxyHandler proxy = new ProxyHandler();
+        HelloService subject = (HelloService) proxy.bind(new HelloServiceImpl());
+        subject.sayHello("test");
     }
 }

@@ -6,7 +6,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * Creator: lei.s
- * Create Date: 2018Äê01ÔÂ10ÈÕ-12:11
+ * Create Date: 2018å¹´01æœˆ10æ—¥-12:11
  *
  * @Description:
  */
@@ -15,33 +15,33 @@ public class HelloServiceHandler implements InvocationHandler {
 
     private Object target;
     /**
-     * °ó¶¨Î¯ÍĞ¶ÔÏó²¢·µ»ØÒ»¸ö¡¾´úÀíÕ¼Î»¡¿
-     * @param target ÕæÊµ¶ÔÏó
-     * @return  ´úÀí¶ÔÏó¡¾Õ¼Î»¡¿
+     * ç»‘å®šå§”æ‰˜å¯¹è±¡å¹¶è¿”å›ä¸€ä¸ªã€ä»£ç†å ä½ã€‘
+     * @param target çœŸå®å¯¹è±¡
+     * @return  ä»£ç†å¯¹è±¡ã€å ä½ã€‘
      */
     public  Object bind(Object target, Class[] interfaces) {
         this.target = target;
-        //È¡µÃ´úÀí¶ÔÏó
+        //å–å¾—ä»£ç†å¯¹è±¡
         return Proxy.newProxyInstance(target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(), this);
     }
 
     @Override
     /**
-     * Í¬¹ı´úÀí¶ÔÏóµ÷ÓÃ·½·¨Ê×ÏÈ½øÈëÕâ¸ö·½·¨.
-     * @param proxy --´úÀí¶ÔÏó
-     * @param method -- ·½·¨,±»µ÷ÓÃ·½·¨.
-     * @param args -- ·½·¨µÄ²ÎÊı
+     * åŒè¿‡ä»£ç†å¯¹è±¡è°ƒç”¨æ–¹æ³•é¦–å…ˆè¿›å…¥è¿™ä¸ªæ–¹æ³•.
+     * @param proxy --ä»£ç†å¯¹è±¡
+     * @param method -- æ–¹æ³•,è¢«è°ƒç”¨æ–¹æ³•.
+     * @param args -- æ–¹æ³•çš„å‚æ•°
      */
     public Object invoke(Object proxy , Method method, Object[] args) throws Throwable {
-        System.err.println("############ÎÒÊÇJDK¶¯Ì¬´úÀí################");
+        System.out.println("############æˆ‘æ˜¯JDKåŠ¨æ€ä»£ç†################");
         Object result = null;
-        //·´Éä·½·¨Ç°µ÷ÓÃ
-        System.err.println("ÎÒ×¼±¸Ëµhello¡£");
-        //·´ÉäÖ´ĞĞ·½·¨  Ïàµ±ÓÚµ÷ÓÃtarget.sayHelllo;
+        //åå°„æ–¹æ³•å‰è°ƒç”¨
+        System.out.println("æˆ‘å‡†å¤‡è¯´helloã€‚");
+        //åå°„æ‰§è¡Œæ–¹æ³•  ç›¸å½“äºè°ƒç”¨target.sayHelllo;
         result=method.invoke(target, args);
-        //·´Éä·½·¨ºóµ÷ÓÃ.
-        System.err.println("ÎÒËµ¹ıhelloÁË");
+        //åå°„æ–¹æ³•åè°ƒç”¨.
+        System.out.println("æˆ‘è¯´è¿‡helloäº†");
         return result;
     }
 
