@@ -36,4 +36,4 @@
 11.string_research
 	String小例子
 12.dynamic-proxy
-	jdk动态代理小例子
+	jdk动态代理小例子,CGLib动态代理小例子
